@@ -51,7 +51,12 @@ class Post_Type_Settings {
 					<?php foreach ( $post_types as $post_type ): ?>
 
 
-						<?php $checked = in_array( $post_type->name, $post_types_selected ); ?>
+						<?php
+						$checked = false;
+
+						if ( is_array( $post_types_selected ) ) {
+							$checked = in_array( $post_type->name, $post_types_selected );
+						} ?>
 						<p><label for="jshat_post_types">
 								<input type="checkbox" name="jshat_post_types[]" <?php checked( true, $checked ); ?>
 								       value="<?php esc_attr_e( $post_type->name ) ?>"><?php esc_attr_e( $post_type->labels->name ) ?>
