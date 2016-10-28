@@ -1,0 +1,13 @@
+{
+  "name": "morgan-and-morgan/js-swap-h1-title",
+  "description": "JavaScript Swap H1 and Title",
+  "keywords": ["wordpress"],
+  "license": "GPL-3.0+",
+  "authors": [
+    {
+      "name": "Mat Gargano",
+      "email": "mgargano@forthepeople.com"
+    }
+  ],
+  "type": "wordpress-plugin"
+}
