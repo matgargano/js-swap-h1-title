@@ -3,7 +3,7 @@
  * Plugin Name: JS Swap H1 and Title
  * Plugin URI:  https://www.forthepeople.com
  * Description: Gives you the ability to swap out H1 and Title tags using JavaScript.
- * Version:     1.0.0
+ * Version:     1.0.1
  */
 
 use jshat\Enqueues;
