@@ -8,15 +8,15 @@ jQuery(document).ready(function ($) {
         },
         key = getUrlParameter('key'),
         match = {};
+    if(Array.isArray(jshat.variables)){
     jshat.variables.forEach(function (object) {
-        console.log(object);
         if (object.handle === key) {
             match = object;
         }
+    }
 
     });
 
-    console.log(match);
 
     if (match.title) {
         document.title = match.title;
