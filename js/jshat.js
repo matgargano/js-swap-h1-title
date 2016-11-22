@@ -1,6 +1,7 @@
 jQuery(document).ready(function ($) {
 
-    var getUrlParameter = function (name) {
+    var jsHatActive = false,
+        getUrlParameter = function (name) {
             name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
             var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
             var results = regex.exec(location.search);
@@ -8,21 +9,25 @@ jQuery(document).ready(function ($) {
         },
         key = getUrlParameter('key'),
         match = {};
-    if(Array.isArray(jshat.variables)){
-    jshat.variables.forEach(function (object) {
-        if (object.handle === key) {
-            match = object;
+    if (Array.isArray(jshat.variables)) {
+        jsHatActive = true;
+        jshat.variables.forEach(function (object) {
+            if (object.handle === key) {
+                match = object;
+            }
+
+        });
+    }
+
+    if (jsHatActive) {
+
+        if (match.title) {
+            document.title = match.title;
         }
-    }
+        if (match.h1) {
+            $('h1').html(match.h1);
 
-    });
-
-
-    if (match.title) {
-        document.title = match.title;
-    }
-    if (match.h1) {
-        $('h1').html(match.h1);
+        }
     }
 
 

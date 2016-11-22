@@ -20,12 +20,12 @@ class Post_Type_Settings {
 		register_setting(
 			'general',
 			self::OPTION_NAME,
-			array( __CLASS__, 'validate' )
+			array( $this, 'validate' )
 		);
 		add_settings_field(
 			self::OPTION_NAME,
 			'JS Swap H1 and Title Settings',
-			array( __CLASS__, 'output_setting' ),
+			array( $this, 'output_setting' ),
 			'general',
 			'default'
 		);
